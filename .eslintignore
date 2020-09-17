@@ -1,0 +1,6 @@
+dist
+.idea
+docs
+coverage
+static
+**/node_modules
