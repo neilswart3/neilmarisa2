@@ -1,8 +1,8 @@
-import Document, { Html, Head, Main, NextScript } from 'next/document';
+import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/document';
 // import colors from 'src/app/theme/colors';
 
 class MyDocument extends Document {
-  static async getInitialProps(ctx) {
+  static async getInitialProps(ctx: DocumentContext) {
     const initialProps = await Document.getInitialProps(ctx);
     return { ...initialProps };
   }
@@ -12,7 +12,6 @@ class MyDocument extends Document {
       <Html>
         <Head>
           <meta name='mobile-web-app-capable' content='yes;' />
-          <link rel='icon' href='browser.png' type='image/png' />
           <link
             href='https://fonts.googleapis.com/css2?family=Roboto&display=swap'
             rel='stylesheet'
