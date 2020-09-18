@@ -49,7 +49,7 @@ class GeneralLayout extends React.Component<Props, {}> {
 
     return (
       <Styled.GeneralLayout>
-        <Background url={bgUrl} />
+        <Background url={bgUrl || 'x'} />
         <Styled.EditBackground>
           <IconButton
             color='primary'
