@@ -1,7 +1,7 @@
 import App, { AppProps } from 'next/app';
 import { CssBaseline } from '@material-ui/core';
-import { StylesProvider } from '@material-ui/core/styles';
-import GlobalFonts from 'src/app/theme/fonts';
+import { StylesProvider, ThemeProvider } from '@material-ui/core/styles';
+import theme from 'src/app/theme';
 
 class MyApp extends App<AppProps> {
   render() {
@@ -9,9 +9,10 @@ class MyApp extends App<AppProps> {
 
     return (
       <StylesProvider injectFirst>
-        <GlobalFonts />
-        <CssBaseline />
-        <Component {...pageProps} />
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
+          <Component {...pageProps} />
+        </ThemeProvider>
       </StylesProvider>
     );
   }

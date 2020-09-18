@@ -14,15 +14,9 @@ const HeaderWrap = styled.div`
   justify-content: center;
   text-align: center;
 
-  h1 {
-    font-family: 'Savoye LET', sans-serif;
-    color: rgb(161, 93, 95);
-    font-size: 4rem;
-    margin: 0 0 0.5rem 0;
-  }
-
   img {
     max-width: 70%;
+    max-height: 50vh;
   }
 `;
 
