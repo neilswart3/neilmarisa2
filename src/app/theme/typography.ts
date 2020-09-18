@@ -1,9 +1,10 @@
 import theme from './spacing';
+import fonts from './fonts';
 
 const typography = {
   fontFamily: 'Avenir LT Std Book, sans-serif',
   h1: {
-    fontFamily: 'Savoye LET, sans-serif',
+    fontFamily: `${fonts.savoye.fontFamily}, sans-serif`,
     lineHeight: theme.spacing(3),
     fontSize: 80,
   },
