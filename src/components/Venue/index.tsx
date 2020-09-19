@@ -10,7 +10,7 @@ const Venue: React.FC = () => {
       style={{ height: '100%' }}>
       <Grid item xs={3}>
         <Typography style={{ color: '#fff', textAlign: 'center' }} variant='h1'>
-          Venue
+          VENUE
         </Typography>
       </Grid>
     </Grid>
