@@ -18,6 +18,10 @@ const HeaderWrap = styled.div`
     max-width: 70%;
     max-height: 50vh;
   }
+
+  h1 {
+    font-weight: bold;
+  }
 `;
 
 const Styled = {

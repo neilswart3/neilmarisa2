@@ -6,27 +6,6 @@ const GeneralLayout = styled.div`
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-
-  @font-face {
-    font-family: 'Savoye LET';
-    src: url('font/SavoyeLetPlain.ttf') format('truetype');
-    font-weight: 100;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: 'Avenir LT Std';
-    src: url('font/AvenirLTStd-Medium.ttf') format('truetype');
-    font-weight: 500;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: 'Avenir LT Std';
-    src: url('font/AvenirLTStd-Book.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-  }
 `;
 
 const ContentWrap = styled.div`
@@ -39,11 +18,11 @@ const ContentWrap = styled.div`
   `}; */
 `;
 
-const AreaGreenWrap = styled.div`
+const TopLeftWrap = styled.div`
   position: relative;
 `;
 
-const AreaRedWrap = styled.div`
+const BottomRightWrap = styled.div`
   position: relative;
 `;
 
@@ -54,8 +33,8 @@ const Content = styled.div`
 const Styled = {
   GeneralLayout,
   ContentWrap,
-  AreaGreenWrap,
-  AreaRedWrap,
+  TopLeftWrap,
+  BottomRightWrap,
   Content,
 };
 

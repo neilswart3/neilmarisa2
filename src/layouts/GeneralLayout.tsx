@@ -6,8 +6,9 @@ import Styled from './styles';
 
 interface Props {
   children: React.ReactNode;
-  areaRed: React.ReactNode;
-  areaGreen: React.ReactNode;
+  overlay: 'primary' | 'secondary' | false;
+  areaBottomRight: React.ReactNode;
+  areaTopLeft: React.ReactNode;
 }
 
 const defaultBg = 'J1OV-aqPXfw';
@@ -49,12 +50,20 @@ class GeneralLayout extends React.Component<Props, {}> {
   }
 
   render() {
-    const { children, areaRed, areaGreen } = this.props;
+    const { 
+      children, 
+      areaTopLeft, 
+      areaBottomRight, 
+      overlay = false,
+    } = this.props;
     const { bgUrl, bgInputActive, edit } = this.state;
+
+    console.log('overlay:', overlay);
 
     return (
       <Styled.GeneralLayout>
         <Background
+          overlay={overlay}
           unsplash={edit}
           url={edit ? bgUrl || 'x' : 'paris.jpg'}
         />
@@ -69,9 +78,9 @@ class GeneralLayout extends React.Component<Props, {}> {
               handleReset={this.handleReset}
             />
           )}
-          <Styled.AreaGreenWrap>{areaGreen}</Styled.AreaGreenWrap>
+          <Styled.TopLeftWrap>{areaTopLeft}</Styled.TopLeftWrap>
           <Styled.Content>{children}</Styled.Content>
-          <Styled.AreaRedWrap>{areaRed}</Styled.AreaRedWrap>
+          <Styled.BottomRightWrap>{areaBottomRight}</Styled.BottomRightWrap>
         </Styled.ContentWrap>
       </Styled.GeneralLayout>
     );

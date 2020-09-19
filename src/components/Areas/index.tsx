@@ -1,2 +1,3 @@
-export { default as Green } from './Green';
-export { default as Red } from './Red';
+export { default as LinkVenue } from './LinkVenue';
+export { default as LinkRsvp } from './LinkRsvp';
+export { default as LinkLanding } from './LinkLanding';

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import colors from 'src/app/theme/colors';
 
 interface BackgroundProps {
   imgUrl: string;
@@ -17,8 +18,24 @@ const Background = styled.div<BackgroundProps>`
   z-index: -1;
 `;
 
+interface OverlayProps {
+  overlay: 'primary' | 'secondary';
+}
+
+const Overlay = styled.div<OverlayProps>`
+  position: absolute;
+  left: 0;
+  top: 0%;
+  height: 100%;
+  width: 100%;
+  background-color: ${props => colors[props.overlay]};
+  opacity: 0.7;
+  z-index: -1;
+`;
+
 const Styled = {
   Background,
+  Overlay,
 };
 
 export default Styled;
