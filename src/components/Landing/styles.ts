@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import mediaQueries from 'src/app/theme/mediaQueries';
 
 const Landing = styled.div`
   display: flex;
@@ -20,7 +21,11 @@ const HeaderWrap = styled.div`
   }
 
   h1 {
-    font-weight: bold;
+    font-weight: 400;
+
+    ${mediaQueries('desktop')`
+      font-weight: 700;
+    `};
   }
 `;
 

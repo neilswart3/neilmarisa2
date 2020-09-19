@@ -8,7 +8,7 @@ const Venue: React.FC = () => {
       justify='center'
       alignItems='center'
       style={{ height: '100%' }}>
-      <Grid item xs={3}>
+      <Grid item xs={12}>
         <Typography style={{ color: '#fff', textAlign: 'center' }} variant='h1'>
           VENUE
         </Typography>
