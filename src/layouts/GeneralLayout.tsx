@@ -1,9 +1,7 @@
 import React from 'react';
-import { IconButton, Paper, TextField } from '@material-ui/core';
-import EditIcon from '@material-ui/icons/Edit';
-import SaveIcon from '@material-ui/icons/Save';
-import RotateLeftIcon from '@material-ui/icons/RotateLeft';
+import router from 'next/router';
 import Background from 'src/components/common/Background';
+import BackgroundForm from 'src/components/BackgroundForm';
 import Styled from './styles';
 
 interface Props {
@@ -18,12 +16,19 @@ class GeneralLayout extends React.Component<Props, {}> {
   state = {
     bgUrl: defaultBg,
     bgInputActive: false,
+    edit: false,
+  };
+
+  componentDidMount = () => {
+    const { edit } = router.query;
+
+    this.setState({
+      edit: Boolean(edit),
+    });
   };
 
   handleChange = e => {
     const { name, value } = e.target;
-
-    console.log(name, value);
 
     this.setState(prevState => ({
       ...prevState,
@@ -45,41 +50,25 @@ class GeneralLayout extends React.Component<Props, {}> {
 
   render() {
     const { children, areaRed, areaGreen } = this.props;
-    const { bgUrl, bgInputActive } = this.state;
+    const { bgUrl, bgInputActive, edit } = this.state;
 
     return (
       <Styled.GeneralLayout>
-        <Background url={bgUrl || 'x'} />
-        <Styled.EditBackground>
-          <IconButton
-            color='primary'
-            aria-label='edit background'
-            title='Edit Background'
-            onClick={() => this.toggleOpen(bgInputActive)}>
-            <EditIcon />
-          </IconButton>
-          {bgInputActive && (
-            <>
-              <TextField
-                id='bgUrl'
-                label='Unsplash ID'
-                name='bgUrl'
-                value={bgUrl}
-                onChange={this.handleChange}
-              />
-              {bgUrl !== defaultBg && (
-                <IconButton
-                  onClick={this.handleReset}
-                  color='secondary'
-                  aria-label='Reset'
-                  title='Reset'>
-                  <RotateLeftIcon />
-                </IconButton>
-              )}
-            </>
-          )}
-        </Styled.EditBackground>
+        <Background
+          unsplash={edit}
+          url={edit ? bgUrl || 'x' : 'paris.jpg'}
+        />
         <Styled.ContentWrap>
+          {edit && (
+            <BackgroundForm
+              bgUrl={bgUrl}
+              defaultBg={defaultBg}
+              inputActive={bgInputActive}
+              toggleOpen={this.toggleOpen}
+              handleChange={this.handleChange}
+              handleReset={this.handleReset}
+            />
+          )}
           <Styled.AreaGreenWrap>{areaGreen}</Styled.AreaGreenWrap>
           <Styled.Content>{children}</Styled.Content>
           <Styled.AreaRedWrap>{areaRed}</Styled.AreaRedWrap>
