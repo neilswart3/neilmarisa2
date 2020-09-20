@@ -6,6 +6,11 @@ const overrides = {
       '@font-face': [fonts.savoye],
     },
   },
+  MuiFormControl: {
+    root: {
+      color: '#fff',
+    }
+  },
 };
 
 export default overrides;

@@ -58,8 +58,6 @@ class GeneralLayout extends React.Component<Props, {}> {
     } = this.props;
     const { bgUrl, bgInputActive, edit } = this.state;
 
-    console.log('overlay:', overlay);
-
     return (
       <Styled.GeneralLayout>
         <Background

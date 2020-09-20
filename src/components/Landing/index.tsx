@@ -8,7 +8,10 @@ const Landing: React.FC = () => {
     <Styled.Landing>
       <Styled.HeaderWrap>
         <Typography variant='h1' color='primary'>
-          Neil&nbsp;Swart &amp; Marisa&nbsp;Janeke
+          Neil &amp; Marisa
+        </Typography>
+        <Typography variant='subtitle1' color='primary'>
+          Friday 27 Nov 2020
         </Typography>
         <Image src='neilmarisa.png' alt='Neil and Marisa' />
       </Styled.HeaderWrap>

@@ -1,14 +1,14 @@
 import colors from './colors';
 
 const palette = {
+  text: {
+    primary: colors.white,
+  },
   primary: {
     main: colors.primary,
   },
   secondary: {
     main: colors.secondary,
-  },
-  default: {
-    main: colors.white,
   },
   background: {
     paper: colors.white,

@@ -8,6 +8,18 @@ const GeneralLayout = styled.div`
   overflow: hidden;
 `;
 
+const ContentLayout = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+`;
+
+const ContentLayoutWrap = styled.div`
+  width: 100%;
+  max-width: 75vw;
+`;
+
 const ContentWrap = styled.div`
   display: grid;
   grid-template: 7.5% 85% 7.5% / 1fr;
@@ -36,6 +48,8 @@ const Styled = {
   TopLeftWrap,
   BottomRightWrap,
   Content,
+  ContentLayout,
+  ContentLayoutWrap,
 };
 
 export default Styled;

@@ -1,20 +1,81 @@
 import React from 'react';
-import { Grid, Typography } from '@material-ui/core';
+import ContentLayout from 'src/layouts/ContentLayout';
+import Styled from './styles';
 
-const Venue: React.FC = () => {
-  return (
-    <Grid
-      container
-      justify='center'
-      alignItems='center'
-      style={{ height: '100%' }}>
-      <Grid item xs={12}>
-        <Typography style={{ color: '#fff', textAlign: 'center' }} variant='h1'>
-          RSVP
-        </Typography>
-      </Grid>
-    </Grid>
-  );
+class Rsvp extends React.Component {
+  state = {
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    attend: false,
+    relation: 'Family of Bride',
+  };
+
+  handleChange = (e) => {
+    const { name, value } = e.target;
+
+    this.setState(prevState => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
+
+  render() {
+    const { firstName, lastName, email, phone } = this.state;
+
+    return (
+      <ContentLayout title='RSVP'>
+        <form>
+          <Styled.TextField
+            fullWidth
+            required
+            margin='normal'
+            id='firstName'
+            name='firstName'
+            label='First Name'
+            value={firstName}
+            onChange={this.handleChange}
+          />
+          <Styled.TextField
+            fullWidth
+            required
+            margin='normal'
+            id='lastName'
+            name='lastName'
+            label='Last Name'
+            value={lastName}
+            onChange={this.handleChange}
+          />
+          <Styled.TextField
+            fullWidth
+            required
+            margin='normal'
+            id='email'
+            name='email'
+            label='Email'
+            type='email'
+            value={email}
+            onChange={this.handleChange}
+          />
+          <Styled.TextField
+            fullWidth
+            required
+            margin='normal'
+            id='phone'
+            name='phone'
+            type='tel'
+            label='Phone'
+            value={phone}
+            onChange={this.handleChange}
+          />
+          <Styled.Button fullWidth variant='contained' color='secondary'>
+            Send
+          </Styled.Button>
+        </form>
+      </ContentLayout>
+    );
+  }
 };
 
-export default Venue;
+export default Rsvp;
