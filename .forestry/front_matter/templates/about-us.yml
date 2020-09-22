@@ -1,0 +1,18 @@
+---
+label: About us
+hide_body: false
+fields:
+- name: intro
+  type: text
+  config:
+    required: false
+  label: Intro
+- name: intro_description
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: Intro description
