@@ -1,23 +1,17 @@
 import styled from 'styled-components';
 import { 
-  TextField as MuiTextField,
   Button as MuiButton,
 } from '@material-ui/core';
-import colors from 'src/app/theme/colors';
 
-const TextField = styled(MuiTextField)`
-  margin-top: 8px;
+const RsvpForm = styled.form`
+  display: grid;
+  grid-gap: 2rem;
+`;
 
-  .MuiFormLabel-root {
-    color: ${colors.white};
-  }
-
-  .MuiInputBase-root {
-    &::before,
-    &::after {
-      border-color: ${colors.white};
-    }
-  }
+const RsvpFormWrap = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2rem;
 `;
 
 const Button = styled(MuiButton)`
@@ -25,8 +19,9 @@ const Button = styled(MuiButton)`
 `;
 
 const Styled = {
-  TextField,
   Button,
+  RsvpForm,
+  RsvpFormWrap,
 };
 
 export default Styled;

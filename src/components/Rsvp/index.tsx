@@ -1,5 +1,6 @@
 import React from 'react';
 import ContentLayout from 'src/layouts/ContentLayout';
+import { RsvpTextField, RsvpAttending, RsvpRelationship } from './common';
 import Styled from './styles';
 
 class Rsvp extends React.Component {
@@ -8,11 +9,11 @@ class Rsvp extends React.Component {
     lastName: '',
     email: '',
     phone: '',
-    attend: false,
-    relation: 'Family of Bride',
+    attend: 'no',
+    relation: '',
   };
 
-  handleChange = (e) => {
+  handleChange = (e: any) => {
     const { name, value } = e.target;
 
     this.setState(prevState => ({
@@ -22,57 +23,45 @@ class Rsvp extends React.Component {
   };
 
   render() {
-    const { firstName, lastName, email, phone } = this.state;
+    const { firstName, lastName, email, phone, attend, relation } = this.state;
 
     return (
       <ContentLayout title='RSVP'>
-        <form>
-          <Styled.TextField
-            fullWidth
-            required
-            margin='normal'
-            id='firstName'
-            name='firstName'
-            label='First Name'
-            value={firstName}
-            onChange={this.handleChange}
-          />
-          <Styled.TextField
-            fullWidth
-            required
-            margin='normal'
-            id='lastName'
-            name='lastName'
-            label='Last Name'
-            value={lastName}
-            onChange={this.handleChange}
-          />
-          <Styled.TextField
-            fullWidth
-            required
-            margin='normal'
-            id='email'
-            name='email'
-            label='Email'
-            type='email'
-            value={email}
-            onChange={this.handleChange}
-          />
-          <Styled.TextField
-            fullWidth
-            required
-            margin='normal'
-            id='phone'
-            name='phone'
-            type='tel'
-            label='Phone'
-            value={phone}
-            onChange={this.handleChange}
-          />
+        <Styled.RsvpForm>
+          <Styled.RsvpFormWrap>
+            <RsvpTextField
+              name='firstName'
+              label='First Name'
+              value={firstName}
+              handleChange={this.handleChange}
+            />
+            <RsvpTextField
+              name='lastName'
+              label='Last Name'
+              value={lastName}
+              handleChange={this.handleChange}
+            />
+            <RsvpTextField
+              name='email'
+              label='Email'
+              type='email'
+              value={email}
+              handleChange={this.handleChange}
+            />
+            <RsvpTextField
+              name='phone'
+              type='tel'
+              label='Phone'
+              value={phone}
+              handleChange={this.handleChange}
+            />
+          </Styled.RsvpFormWrap>
+          <RsvpRelationship value={relation} handleChange={this.handleChange} />
+          <RsvpAttending value={attend} handleChange={this.handleChange} />
           <Styled.Button fullWidth variant='contained' color='secondary'>
             Send
           </Styled.Button>
-        </form>
+        </Styled.RsvpForm>
       </ContentLayout>
     );
   }
