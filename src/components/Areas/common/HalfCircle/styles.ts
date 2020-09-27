@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { Button as MuiButton } from '@material-ui/core';
-import mediaQueries, { media } from 'src/app/theme/mediaQueries';
+import mediaQueries from 'src/app/theme/mediaQueries';
+import muiTheme from 'src/app/theme/muiTheme';
 
 const labelAlign = {
   topLeft: 'flex-end',
@@ -38,6 +39,7 @@ const HalfCircle = styled(MuiButton)<HalfCircleProps>`
   ${props => `${absolutePos.sm[props.pos]}: 0;`}
   height: 50vw;
   width: 200vw;
+  padding: 1rem;
   border-radius: 50%;
   transform: translateX(-50%);
 
@@ -49,11 +51,16 @@ const HalfCircle = styled(MuiButton)<HalfCircleProps>`
     width: 200%;
     height: 120vh;
     align-items: center;
+    padding: 0;
     ${absolutePos.lg[props.pos]}: 0;
     transform: ${translate[props.pos]};
   `)}
 
   .MuiButton-label {
+    span {
+      line-height: 1.3;
+    }
+
     ${props =>
       mediaQueries.lg(`
       display: flex;
@@ -62,8 +69,8 @@ const HalfCircle = styled(MuiButton)<HalfCircleProps>`
 
       span {
         display: inline-block;
-        line-height: 1.3;
-        padding: 0 0.3rem;
+        width: 50%;
+        text-align: center;
       }
     `)}
   }
