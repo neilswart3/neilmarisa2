@@ -7,8 +7,8 @@ const LandingPage: React.FC = () => {
   return (
     <GeneralLayout
       overlay={false}
-      areaBottomRight={<LinkRsvp pos='bottom' />}
-      areaTopLeft={<LinkVenue pos='top' />}>
+      areaBottomRight={<LinkRsvp pos='bottomRight' />}
+      areaTopLeft={<LinkVenue pos='topLeft' />}>
       <Landing />
     </GeneralLayout>
   );

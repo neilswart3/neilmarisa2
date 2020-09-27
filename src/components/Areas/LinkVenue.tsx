@@ -2,7 +2,7 @@ import React from 'react';
 import { HalfCircle } from './common';
 
 interface Props {
-  pos: 'top' | 'bottom';
+  pos: 'topLeft' | 'bottomRight';
 }
 
 const Green: React.FC<Props> = ({ pos }) => {

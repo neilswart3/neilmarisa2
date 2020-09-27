@@ -25,9 +25,9 @@ const ContentWrap = styled.div`
   grid-template: 7.5% 85% 7.5% / 1fr;
   height: 100%;
 
-  /* ${mediaQueries('desktop')`
-    grid-template: 1fr / 7.5% 85% 7.5%;
-  `}; */
+  ${mediaQueries.lg(`
+    grid-template: 1fr / 5% 90% 5%;
+  `)};
 `;
 
 const TopLeftWrap = styled.div`

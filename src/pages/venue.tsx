@@ -7,8 +7,8 @@ const VenuePage = () => {
   return (
     <GeneralLayout
       overlay='secondary'
-      areaBottomRight={<LinkLanding pos='bottom' />}
-      areaTopLeft={<LinkRsvp pos='top' />}>
+      areaBottomRight={<LinkLanding pos='bottomRight' />}
+      areaTopLeft={<LinkRsvp pos='topLeft' />}>
       <Venue />
     </GeneralLayout>
   );

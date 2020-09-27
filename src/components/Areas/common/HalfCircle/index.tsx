@@ -6,7 +6,7 @@ interface Props {
   color: 'default' | 'primary' | 'secondary';
   text?: string;
   path: string;
-  pos: 'top' | 'bottom';
+  pos: 'topLeft' | 'bottomRight';
 }
 
 const HalfCircle: React.FC<Props> = ({ color, pos, text = '', path }) => {
@@ -22,7 +22,7 @@ const HalfCircle: React.FC<Props> = ({ color, pos, text = '', path }) => {
       color={color}
       disableElevation
       fullWidth>
-      {text}
+      {text.split('').map(t => <span>{t}</span>)}
     </Styled.HalfCircle>
   );
 };

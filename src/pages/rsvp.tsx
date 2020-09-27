@@ -7,8 +7,8 @@ const RSVPPage = () => {
   return (
     <GeneralLayout
       overlay='primary'
-      areaBottomRight={<LinkLanding pos='bottom' />}
-      areaTopLeft={<LinkVenue pos='top' />}>
+      areaBottomRight={<LinkLanding pos='bottomRight' />}
+      areaTopLeft={<LinkVenue pos='topLeft' />}>
       <Rsvp />
     </GeneralLayout>
   );

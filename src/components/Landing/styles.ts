@@ -16,16 +16,24 @@ const HeaderWrap = styled.div`
   text-align: center;
 
   img {
-    max-width: 70%;
+    max-width: 80%;
     max-height: 50vh;
+
+    ${mediaQueries.lg(`
+      max-width: 90%;
+    `)};
+
+    ${mediaQueries.xl(`
+      max-width: 100%;
+    `)};
   }
 
   h1 {
     font-weight: 400;
 
-    ${mediaQueries('desktop')`
+    ${mediaQueries.lg(`
       font-weight: 700;
-    `};
+    `)}
   }
 `;
 
