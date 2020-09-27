@@ -14,7 +14,7 @@ interface Props {
 
 const RsvpAttending: React.FC<Props> = ({ value, handleChange }) => {
   return (
-    <Styled.FormControl margin='normal' component='fieldset'>
+    <Styled.FormControl margin='normal' component='div'>
       <FormLabel component='legend'>Attending</FormLabel>
       <RadioGroup 
         aria-label='attending'
