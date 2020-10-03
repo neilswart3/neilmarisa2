@@ -39,7 +39,6 @@ const HalfCircle = styled(MuiButton)<HalfCircleProps>`
   ${props => `${absolutePos.sm[props.pos]}: 0;`}
   height: 50vw;
   width: 200vw;
-  padding: 1rem;
   border-radius: 50%;
   transform: translateX(-50%);
 

@@ -58,7 +58,7 @@ class Rsvp extends React.Component {
           </Styled.RsvpFormWrap>
           <RsvpRelationship value={relation} handleChange={this.handleChange} />
           <RsvpAttending value={attend} handleChange={this.handleChange} />
-          <Styled.Button fullWidth variant='contained' color='secondary'>
+          <Styled.Button variant='contained' color='secondary'>
             Send
           </Styled.Button>
         </Styled.RsvpForm>

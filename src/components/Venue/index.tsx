@@ -1,7 +1,7 @@
 import React from 'react';
 import { Typography } from '@material-ui/core';
 import ContentLayout from 'src/layouts/ContentLayout';
-import GoogleMap  from 'src/components/GoogleMap';
+import VenueMap from 'src/components/VenueMap';
 import Styled from './styles';
 
 const Venue: React.FC = () => {
@@ -16,13 +16,7 @@ const Venue: React.FC = () => {
       <Typography variant='body1' align='center'>
         <span>Time:</span> 15:30 for 16:00
       </Typography>
-      {/* <GoogleMap
-        isMarkerShown
-        googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
-        loadingElement={<div style={{ height: `100%` }} />}
-        containerElement={<div style={{ height: `400px` }} />}
-        mapElement={<div style={{ height: `100%` }} />}
-      /> */}
+      <VenueMap />
     </ContentLayout>
   );
 };

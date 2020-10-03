@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import mediaQueries from 'src/app/theme/mediaQueries';
+import muiTheme from 'src/app/theme/muiTheme';
 
 const GeneralLayout = styled.div`
   position: relative;
@@ -13,6 +14,11 @@ const ContentLayout = styled.div`
   justify-content: center;
   align-items: center;
   height: 100%;
+  margin: 0 auto;
+
+  ${mediaQueries.md(`
+    max-width: ${muiTheme.spacing(16)};
+  `)}
 `;
 
 const ContentLayoutWrap = styled.div`
