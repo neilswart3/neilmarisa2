@@ -12,10 +12,10 @@ export interface MarkerProps {
 const Marker: React.FC<MarkerProps> = ({ text }) => {
   return (
     <Styled.Marker>
-      <FlightLandIcon />
       <Typography variant='body1' align='center'>
         {text}
       </Typography>
+      <FlightLandIcon />
     </Styled.Marker>
   );
 };
