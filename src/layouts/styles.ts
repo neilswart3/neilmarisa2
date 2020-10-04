@@ -17,13 +17,17 @@ const ContentLayout = styled.div`
   margin: 0 auto;
 
   ${mediaQueries.md(`
-    max-width: ${muiTheme.spacing(16)};
+    max-width: ${muiTheme.spacing(21)};
   `)}
 `;
 
 const ContentLayoutWrap = styled.div`
   width: 100%;
-  max-width: 75vw;
+  max-width: 90vw;
+
+  ${mediaQueries.md(`
+    max-width: 75vw;
+  `)}
 `;
 
 const ContentWrap = styled.div`
@@ -44,9 +48,7 @@ const BottomRightWrap = styled.div`
   position: relative;
 `;
 
-const Content = styled.div`
-  
-`;
+const Content = styled.div``;
 
 const Styled = {
   GeneralLayout,

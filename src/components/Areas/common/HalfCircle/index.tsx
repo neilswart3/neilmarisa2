@@ -1,5 +1,6 @@
 import React from 'react';
 import router from 'next/router';
+import { motion } from 'framer-motion';
 import Styled from './styles';
 
 interface Props {
@@ -9,22 +10,47 @@ interface Props {
   pos: 'topLeft' | 'bottomRight';
 }
 
-const HalfCircle: React.FC<Props> = ({ color, pos, text = '', path }) => {
-  const handleClick = (link: string): void => {
-    router.push(link, link);
+interface State {
+  animate: boolean,
+  animateComplete: boolean,
+}
+
+// const variants = {
+//   open: { opacity: 1, x: 0 },
+//   closed: { opacity: 0, x: "-100%" },
+// }
+
+class HalfCircle extends React.Component<Props, State> {
+  state = {
+    animate: false,
+    animateComplete: false,
   };
 
-  return (
-    <Styled.HalfCircle
-      onClick={() => handleClick(path)}
-      pos={pos}
-      variant='contained'
-      color={color}
-      disableElevation
-      fullWidth>
-      {text.split('').map(t => <span>{t}</span>)}
-    </Styled.HalfCircle>
-  );
+  handleClick = (link: string): void => {
+    router.push(link, link);
+    // this.setState({
+    //   animate: true,
+    // });
+  };
+
+  render() {
+    const { color, pos, text = '', path } = this.props;
+    const { animate, animateComplete } = this.state;
+
+    return (
+      <Styled.HalfCircleWrap pos={pos}>
+        <Styled.HalfCircle
+          onClick={() => this.handleClick(path)}
+          pos={pos}
+          variant='contained'
+          color={color}
+          disableElevation
+          fullWidth>
+          {text.split('').map(t => <span key={t}>{t}</span>)}
+        </Styled.HalfCircle>
+      </Styled.HalfCircleWrap>
+    );
+  };
 };
 
 export default HalfCircle;

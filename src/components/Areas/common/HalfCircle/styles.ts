@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Button as MuiButton } from '@material-ui/core';
+import { motion } from 'framer-motion';
 import mediaQueries from 'src/app/theme/mediaQueries';
 import muiTheme from 'src/app/theme/muiTheme';
 
@@ -32,9 +33,8 @@ interface HalfCircleProps {
   pos: 'topLeft' | 'bottomRight';
 }
 
-const HalfCircle = styled(MuiButton)<HalfCircleProps>`
+const HalfCircleWrap = styled(motion.div)<HalfCircleProps>`
   position: absolute;
-  align-items: ${props => labelAlign[props.pos]};
   left: 50%;
   ${props => `${absolutePos.sm[props.pos]}: 0;`}
   height: 50vw;
@@ -49,10 +49,24 @@ const HalfCircle = styled(MuiButton)<HalfCircleProps>`
     top: 50%;
     width: 200%;
     height: 120vh;
-    align-items: center;
-    padding: 0;
     ${absolutePos.lg[props.pos]}: 0;
     transform: ${translate[props.pos]};
+  `)}
+`;
+
+const HalfCircle = styled(MuiButton)<HalfCircleProps>`
+  position: absolute;
+  align-items: ${props => labelAlign[props.pos]};
+  /* left: 50%; */
+  /* ${props => `${absolutePos.sm[props.pos]}: 0;`} */
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  /* transform: translateX(-50%); */
+
+  ${mediaQueries.lg(`
+    align-items: center;
+    padding: 0;
   `)}
 
   .MuiButton-label {
@@ -78,6 +92,7 @@ const HalfCircle = styled(MuiButton)<HalfCircleProps>`
 const Styled = {
   Button,
   HalfCircle,
+  HalfCircleWrap,
 };
 
 export default Styled;
