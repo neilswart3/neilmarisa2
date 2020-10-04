@@ -18,12 +18,6 @@ class MyDocument extends Document {
       <Html>
         <Head>
           <meta name='mobile-web-app-capable' content='yes;' />
-          {/* <script
-            type='text/javascript'
-            src='https://js.api.here.com/v3/3.1/mapsjs-core.js'></script>
-          <script
-            type='text/javascript'
-            src='https://js.api.here.com/v3/3.1/mapsjs-service.js'></script> */}
         </Head>
         <body>
           <Main />
