@@ -16,6 +16,7 @@ const RsvpTextField: React.FC<Props> = props => {
     <Styled.TextField
       fullWidth
       required
+      error
       id={name}
       type={!type && 'text'}
       name={name}
@@ -24,6 +25,6 @@ const RsvpTextField: React.FC<Props> = props => {
       onChange={handleChange}
     />
   );
-}
+};
 
 export default RsvpTextField;

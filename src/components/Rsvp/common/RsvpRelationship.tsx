@@ -1,7 +1,5 @@
 import React from 'react';
-import {
-  InputLabel,
-} from '@material-ui/core';
+import { InputLabel } from '@material-ui/core';
 import Styled from './styles';
 
 const relationshipOptions = {
@@ -10,7 +8,7 @@ const relationshipOptions = {
   friendBride: 'Friend of the Bride',
   friendGroom: 'Friend of the Groom',
   plusOne: 'Plus One',
-}
+};
 
 interface Props {
   handleChange: (e: any) => void;
@@ -20,7 +18,7 @@ interface Props {
 const RsvpRelationship: React.FC<Props> = ({ handleChange, value }) => {
   return (
     <Styled.FormControl fullWidth required>
-      <InputLabel id='relationship-label'>Relationhip</InputLabel>
+      <InputLabel id='relationship-label'>Relationship</InputLabel>
       <Styled.Select
         labelId='relationship-label'
         id='relationship'
