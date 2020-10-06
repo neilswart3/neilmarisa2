@@ -1,5 +1,5 @@
 import React from 'react';
-import { InputLabel } from '@material-ui/core';
+import { InputLabel, FormHelperText } from '@material-ui/core';
 import Styled from './styles';
 
 const relationshipOptions = {
@@ -13,11 +13,12 @@ const relationshipOptions = {
 interface Props {
   handleChange: (e: any) => void;
   value: string;
+  error: string;
 }
 
-const RsvpRelationship: React.FC<Props> = ({ handleChange, value }) => {
+const RsvpRelationship: React.FC<Props> = ({ handleChange, value, error }) => {
   return (
-    <Styled.FormControl fullWidth /* required */>
+    <Styled.FormControl fullWidth error={error !== ''} /* required */>
       <InputLabel id='relationship-label'>Relationship</InputLabel>
       <Styled.Select
         labelId='relationship-label'
@@ -30,6 +31,7 @@ const RsvpRelationship: React.FC<Props> = ({ handleChange, value }) => {
           </Styled.MenuItem>
         ))}
       </Styled.Select>
+      {error !== '' && <FormHelperText>{error}</FormHelperText>}
     </Styled.FormControl>
   );
 };

@@ -6,17 +6,19 @@ interface Props {
   label: string;
   value: string;
   type?: string;
+  error: string;
   handleChange: (e: any) => void;
 }
 
 const RsvpTextField: React.FC<Props> = props => {
-  const { name, label, value, type = 'text', handleChange } = props;
+  const { name, label, value, type = 'text', handleChange, error } = props;
 
   return (
     <Styled.TextField
       fullWidth
       // required
-      // error
+      error={error !== ''}
+      helperText={error}
       id={name}
       type={type}
       name={name}

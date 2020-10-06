@@ -1,4 +1,5 @@
 import React from 'react';
+import publicSettings from 'src/app/publicSettings';
 import { sendContactMail } from 'src/networking/sendContactMail';
 import ContentLayout from 'src/layouts/ContentLayout';
 import { RsvpTextField, RsvpAttending, RsvpRelationship } from './common';
@@ -45,7 +46,7 @@ class Rsvp extends React.Component<{}, State> {
 
     this.setState(prevState => ({
       ...prevState,
-      [name]: value.trim(),
+      [name]: value,
     }));
   };
 
@@ -67,8 +68,19 @@ class Rsvp extends React.Component<{}, State> {
     return '';
   };
 
-  generateErrors = (): void => {
-    const { firstName, lastName, email, phone, attend, relation } = this.state;
+  handleSubmit = async (e: any) => {
+    e.preventDefault();
+
+    const recipientMail = publicSettings.mail.resMail;
+    const {
+      errors,
+      firstName,
+      lastName,
+      email,
+      phone,
+      attend,
+      relation,
+    } = this.state;
 
     this.setState({
       errors: {
@@ -80,54 +92,37 @@ class Rsvp extends React.Component<{}, State> {
         relation: this.validate('relation', relation),
       },
     });
-  };
 
-  handleSubmit = async (e: any) => {
-    e.preventDefault();
+    // console.clear();
+    // console.log('firstName:', firstName);
+    // console.log('errors:', errors);
 
-    this.generateErrors();
-
-    const recipientMail = 'rsvp@marisaneilwedding.co.za';
-    const {
-      errors,
-      firstName,
-      lastName,
-      email,
-      phone,
-      attend,
-      relation,
-    } = this.state;
-
-    console.clear();
-    console.log('firstName:', firstName);
-    console.log('errors:', errors);
-
-    try {
-      const res = await sendContactMail(
-        recipientMail,
-        `${firstName} ${lastName}`,
-        email,
-        phone,
-        attend,
-        relation,
-      );
-      if (res.status < 300) {
-        this.setState({
-          // message: 'Thanks for your message',
-          firstName: '',
-          lastName: '',
-          email: '',
-          phone: '',
-          attend: 'no',
-          relation: '',
-        });
-      } else {
-        // this.setState({ formButtonText: 'Please fill out all fields.' });
-        console.log('error', res.status);
-      }
-    } catch (error) {
-      console.log(error.message);
-    }
+    // try {
+    //   const res = await sendContactMail(
+    //     recipientMail,
+    //     `${firstName} ${lastName}`,
+    //     email,
+    //     phone,
+    //     attend,
+    //     relation,
+    //   );
+    //   if (res.status < 300) {
+    //     this.setState({
+    //       // message: 'Thanks for your message',
+    //       firstName: '',
+    //       lastName: '',
+    //       email: '',
+    //       phone: '',
+    //       attend: 'no',
+    //       relation: '',
+    //     });
+    //   } else {
+    //     // this.setState({ formButtonText: 'Please fill out all fields.' });
+    //     console.log('error', res.status);
+    //   }
+    // } catch (error) {
+    //   console.log(error.message);
+    // }
   };
 
   render() {
@@ -143,7 +138,7 @@ class Rsvp extends React.Component<{}, State> {
 
     // console.log('firstName:', firstName);
 
-    // console.log('errors:', errors);
+    console.log('errors:', errors);
 
     return (
       <ContentLayout title='RSVP'>
@@ -151,6 +146,7 @@ class Rsvp extends React.Component<{}, State> {
           <Styled.RsvpFormWrap>
             <RsvpTextField
               name='firstName'
+              error={errors.firstName}
               label='First Name'
               value={firstName}
               type='text'
@@ -158,6 +154,7 @@ class Rsvp extends React.Component<{}, State> {
             />
             <RsvpTextField
               name='lastName'
+              error={errors.lastName}
               label='Last Name'
               type='text'
               value={lastName}
@@ -165,6 +162,7 @@ class Rsvp extends React.Component<{}, State> {
             />
             <RsvpTextField
               name='email'
+              error={errors.email}
               label='Email'
               type='text'
               value={email}
@@ -172,14 +170,23 @@ class Rsvp extends React.Component<{}, State> {
             />
             <RsvpTextField
               name='phone'
+              error={errors.phone}
               type='text'
               label='Phone'
               value={phone}
               handleChange={this.handleChange}
             />
           </Styled.RsvpFormWrap>
-          <RsvpRelationship value={relation} handleChange={this.handleChange} />
-          <RsvpAttending value={attend} handleChange={this.handleChange} />
+          <RsvpRelationship
+            error={errors.relation}
+            value={relation}
+            handleChange={this.handleChange}
+          />
+          <RsvpAttending
+            error={errors.attend}
+            value={attend}
+            handleChange={this.handleChange}
+          />
           <Styled.Button type='submit' variant='contained' color='secondary'>
             Send
           </Styled.Button>
