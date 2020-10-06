@@ -1,13 +1,14 @@
 import nodemailer from 'nodemailer';
+import publicSettings from 'src/app/publicSettings';
 
-const emailPass = 'Oscar890914Oscar';
+const { mail } = publicSettings;
 
 const transporter = nodemailer.createTransport({
-  host: 'www40.cpt4.host-h.net',
-  port: 587,
+  host: mail.host,
+  port: mail.port,
   auth: {
-    user: 'rsvp@marisaneilwedding.co.za',
-    pass: emailPass,
+    user: mail.user,
+    pass: mail.pass,
   },
 });
 //[1]
@@ -20,10 +21,10 @@ export default async (req, res) => {
   if (
     email === '' ||
     name === '' ||
-    phone === ''
-    // attend === '' ||
-    // // relation === '' ||
-    // recipientMail === ''
+    phone === '' ||
+    attend === '' ||
+    relation === '' ||
+    recipientMail === ''
   ) {
     res.status(403).send('');
     return;
