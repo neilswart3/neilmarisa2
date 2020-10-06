@@ -11,8 +11,8 @@ interface Props {
 }
 
 interface State {
-  animate: boolean,
-  animateComplete: boolean,
+  animate: boolean;
+  animateComplete: boolean;
 }
 
 // const variants = {
@@ -46,11 +46,13 @@ class HalfCircle extends React.Component<Props, State> {
           color={color}
           disableElevation
           fullWidth>
-          {text.split('').map(t => <span key={t}>{t}</span>)}
+          {text.split('').map((t, i) => (
+            <span key={`${t}-${i}`}>{t}</span>
+          ))}
         </Styled.HalfCircle>
       </Styled.HalfCircleWrap>
     );
-  };
-};
+  }
+}
 
 export default HalfCircle;

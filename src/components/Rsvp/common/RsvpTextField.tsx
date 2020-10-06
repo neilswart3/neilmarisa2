@@ -10,7 +10,7 @@ interface Props {
 }
 
 const RsvpTextField: React.FC<Props> = props => {
-  const { name, label, value, type, handleChange } = props;
+  const { name, label, value, type = 'text', handleChange } = props;
 
   return (
     <Styled.TextField
@@ -18,7 +18,7 @@ const RsvpTextField: React.FC<Props> = props => {
       required
       error
       id={name}
-      type={!type && 'text'}
+      type={type}
       name={name}
       label={label}
       value={value}

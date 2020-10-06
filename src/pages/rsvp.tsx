@@ -12,6 +12,6 @@ const RSVPPage = () => {
       <Rsvp />
     </GeneralLayout>
   );
-}
+};
 
 export default RSVPPage;

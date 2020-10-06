@@ -49,34 +49,30 @@ class Rsvp extends React.Component<{}, State> {
     }));
   };
 
-  // validate = (name: string, value: string): void => {
-  //   const text = !(name === 'email' || name === 'phone');
+  validate = (name: string, value: string): void => {
+    const text = !(name === 'email' || name === 'phone');
+    const errorText = regex.text.test(value) ? '' : errors[name];
+    const errorElse = regex[name].test(value) ? '' : errors[name];
 
-  //   // check for empty
-  //   if (value === '') {
-  //     this.setState(prevState => ({
-  //       ...prevState,
-  //       errors: {
-  //         ...prevState.errors,
-  //         [name]: `${names[name]} can't be empty`,
-  //       },
-  //     }));
-
-  //     return;
-  //   }
-
-  //   this.setState(prevState => ({
-  //     ...prevState,
-  //     errors: {
-  //       ...prevState.errors,
-  //       [name]: text ? regex.text.test(value) ? '' : errors[name] : '',
-  //     },
-  //   }));
-
-  //   if () {
-
-  //   } else {
-  // };
+    // check for empty
+    if (value === '') {
+      this.setState(prevState => ({
+        ...prevState,
+        errors: {
+          ...prevState.errors,
+          [name]: `${names[name]} can't be empty`,
+        },
+      }));
+    } else {
+      this.setState(prevState => ({
+        ...prevState,
+        errors: {
+          ...prevState.errors,
+          [name]: text ? errorText : errorElse,
+        },
+      }));
+    }
+  };
 
   // handleSend = () => {};
 
