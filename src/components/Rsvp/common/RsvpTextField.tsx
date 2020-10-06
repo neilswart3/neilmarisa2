@@ -15,8 +15,8 @@ const RsvpTextField: React.FC<Props> = props => {
   return (
     <Styled.TextField
       fullWidth
-      required
-      error
+      // required
+      // error
       id={name}
       type={type}
       name={name}

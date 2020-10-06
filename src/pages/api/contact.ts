@@ -1,12 +1,12 @@
 import nodemailer from 'nodemailer';
 
-const emailPass = 'yourPassword';
+const emailPass = 'Oscar890914Oscar';
 
 const transporter = nodemailer.createTransport({
-  host: 'smtp.ionos.de',
-  port: 25,
+  host: 'www40.cpt4.host-h.net',
+  port: 587,
   auth: {
-    user: 'yourUser@example.com',
+    user: 'rsvp@marisaneilwedding.co.za',
     pass: emailPass,
   },
 });
@@ -20,10 +20,10 @@ export default async (req, res) => {
   if (
     email === '' ||
     name === '' ||
-    phone === '' ||
-    attend === '' ||
-    relation === '' ||
-    recipientMail === ''
+    phone === ''
+    // attend === '' ||
+    // // relation === '' ||
+    // recipientMail === ''
   ) {
     res.status(403).send('');
     return;

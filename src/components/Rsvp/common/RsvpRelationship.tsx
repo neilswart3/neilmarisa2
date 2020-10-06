@@ -17,7 +17,7 @@ interface Props {
 
 const RsvpRelationship: React.FC<Props> = ({ handleChange, value }) => {
   return (
-    <Styled.FormControl fullWidth required>
+    <Styled.FormControl fullWidth /* required */>
       <InputLabel id='relationship-label'>Relationship</InputLabel>
       <Styled.Select
         labelId='relationship-label'
