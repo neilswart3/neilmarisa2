@@ -1,5 +1,6 @@
 import nodemailer from 'nodemailer';
 import publicSettings from 'src/app/publicSettings';
+import { regex } from 'src/components/Rsvp/errors';
 
 const { mail } = publicSettings;
 
@@ -13,18 +14,36 @@ const transporter = nodemailer.createTransport({
 });
 //[1]
 
+const validate = (name: string, value: string): boolean => {
+  if (value === '') {
+    return false;
+  }
+
+  if (regex.special.test(value)) {
+    return false;
+  }
+
+  if (name === 'email' || name === 'phone') {
+    if (!regex[name].test(value)) {
+      return false;
+    }
+  }
+
+  return true;
+};
+
 export default async (req, res) => {
   const { recipientMail, name, email, phone, attend, relation } = req.body;
   //[2]
 
   // Check if fields are all filled
   if (
-    email === '' ||
-    name === '' ||
-    phone === '' ||
-    attend === '' ||
-    relation === '' ||
-    recipientMail === ''
+    !validate('email', email) ||
+    !validate('name', name) ||
+    !validate('phone', phone) ||
+    !validate('attend', attend) ||
+    !validate('relation', relation) ||
+    !validate('recipientMail', recipientMail)
   ) {
     res.status(403).send('');
     return;
@@ -39,7 +58,7 @@ export default async (req, res) => {
       Email: ${email}.
       Phone: ${phone}.
       Attending: ${attend}.
-      Relationship: ${attend}.
+      Relationship: ${relation}.
     `,
     recipientMail,
   });
