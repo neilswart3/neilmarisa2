@@ -6,7 +6,6 @@ import ContentLayout from 'src/layouts/ContentLayout';
 import { RsvpTextField, RsvpAttending, RsvpRelationship } from './common';
 import { errors, regex, names } from './errors';
 import Styled from './styles';
-import EmailTest from './EmailTest';
 
 interface State {
   firstName: string;
@@ -120,15 +119,7 @@ class Rsvp extends React.Component<{}, State> {
   handleSubmit = async (e: any) => {
     e.preventDefault();
 
-    const {
-      errors,
-      firstName,
-      lastName,
-      email,
-      phone,
-      attend,
-      relation,
-    } = this.state;
+    const { firstName, lastName, email, phone, attend, relation } = this.state;
 
     this.setState(
       {
