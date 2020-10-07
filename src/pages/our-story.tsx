@@ -1,17 +1,17 @@
 import React from 'react';
 import GeneralLayout from 'src/layouts/GeneralLayout';
-import Venue from 'src/components/Venue';
+import OurStory from 'src/components/OurStory';
 import { LinkRsvp, LinkLanding } from 'src/components/Areas';
 
-const VenuePage = () => {
+const AboutPage = () => {
   return (
     <GeneralLayout
       overlay='primary'
       areaBottomRight={<LinkLanding pos='bottomRight' />}
       areaTopLeft={<LinkRsvp pos='topLeft' />}>
-      <Venue />
+      <OurStory />
     </GeneralLayout>
   );
 };
 
-export default VenuePage;
+export default AboutPage;

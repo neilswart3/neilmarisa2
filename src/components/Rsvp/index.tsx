@@ -8,6 +8,7 @@ import { errors, regex, names } from './errors';
 import Styled from './styles';
 
 interface State {
+  loading: boolean;
   firstName: string;
   lastName: string;
   email: string;
@@ -27,6 +28,7 @@ interface State {
 
 class Rsvp extends React.Component<{}, State> {
   state = {
+    loading: false,
     firstName: '',
     lastName: '',
     email: '',
@@ -86,6 +88,10 @@ class Rsvp extends React.Component<{}, State> {
 
     if (hasErrors.length === 0) {
       try {
+        this.setState({
+          loading: true,
+        });
+
         const res = await sendContactMail(
           recipientMail,
           `${firstName} ${lastName}`,
@@ -103,9 +109,11 @@ class Rsvp extends React.Component<{}, State> {
             phone: '',
             attend: 'no',
             relation: '',
+            loading: false,
           });
         } else {
           this.setState({
+            loading: false,
             message:
               'There was an error sending your message. Please try again.',
           });
@@ -148,6 +156,7 @@ class Rsvp extends React.Component<{}, State> {
       relation,
       message,
       errors,
+      loading,
     } = this.state;
 
     return (
@@ -197,8 +206,12 @@ class Rsvp extends React.Component<{}, State> {
             value={attend}
             handleChange={this.handleChange}
           />
-          <Styled.Button type='submit' variant='contained' color='secondary'>
-            Send
+          <Styled.Button
+            disabled={loading}
+            type='submit'
+            variant='contained'
+            color='primary'>
+            {loading ? <Styled.CircularProgress size={28} /> : 'Send'}
           </Styled.Button>
         </Styled.RsvpForm>
         {message !== '' ? (

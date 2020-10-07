@@ -6,7 +6,7 @@ import { LinkLanding, LinkVenue } from 'src/components/Areas';
 const RSVPPage = () => {
   return (
     <GeneralLayout
-      overlay='primary'
+      overlay='secondary'
       areaBottomRight={<LinkLanding pos='bottomRight' />}
       areaTopLeft={<LinkVenue pos='topLeft' />}>
       <Rsvp />

@@ -9,7 +9,7 @@ const overrides = {
   MuiFormControl: {
     root: {
       color: '#fff',
-    }
+    },
   },
 };
 
