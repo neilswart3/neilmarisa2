@@ -12,7 +12,7 @@ const Background: React.FC<Props> = props => {
   return (
     <>
       <Styled.Background imgUrl={`img/${url}`} />
-      {overlay && <Styled.Overlay overlay={overlay} />}
+      <Styled.Overlay overlay={overlay} />
     </>
   );
 };

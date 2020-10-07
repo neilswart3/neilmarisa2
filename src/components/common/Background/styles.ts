@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { rgba } from 'polished';
 import colors from 'src/app/theme/colors';
 
 interface BackgroundProps {
@@ -19,7 +20,7 @@ const Background = styled.div<BackgroundProps>`
 `;
 
 interface OverlayProps {
-  overlay: 'primary' | 'secondary';
+  overlay: 'primary' | 'secondary' | false;
 }
 
 const Overlay = styled.div<OverlayProps>`
@@ -28,9 +29,10 @@ const Overlay = styled.div<OverlayProps>`
   top: 0%;
   height: 100%;
   width: 100%;
-  background-color: ${props => colors[props.overlay]};
-  opacity: 0.7;
+  background-color: ${props =>
+    props.overlay ? rgba(colors[props.overlay], 0.7) : rgba(colors.black, 0)};
   z-index: -1;
+  animation: fadeIn 1s ease;
 `;
 
 const Styled = {

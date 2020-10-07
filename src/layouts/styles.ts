@@ -64,7 +64,9 @@ const BottomRightWrap = styled.div`
   position: relative;
 `;
 
-const Content = styled.div``;
+const Content = styled.div`
+  animation: fadeIn 2s ease-in-out;
+`;
 
 const Styled = {
   GeneralLayout,
