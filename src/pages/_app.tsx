@@ -3,6 +3,7 @@ import { CssBaseline } from '@material-ui/core';
 import { StylesProvider, ThemeProvider } from '@material-ui/core/styles';
 import theme from 'src/app/theme';
 import 'src/app/theme/font.css';
+import 'react-perfect-scrollbar/dist/css/styles.css';
 
 class MyApp extends App<AppProps> {
   render() {

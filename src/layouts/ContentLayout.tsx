@@ -5,11 +5,18 @@ import Styled from './styles';
 interface Props {
   children: React.ReactNode;
   title: string;
+  align?: 'top' | 'bottom' | 'center';
+  fullwidth?: boolean;
 }
 
-const ContentLayout: React.FC<Props> = ({ children, title }) => {
+const ContentLayout: React.FC<Props> = ({
+  children,
+  title,
+  align = 'center',
+  fullwidth = false,
+}) => {
   return (
-    <Styled.ContentLayout>
+    <Styled.ContentLayout align={align} fullwidth={fullwidth}>
       <Styled.ContentLayoutWrap>
         <Typography align='center' gutterBottom variant='h2'>
           {title}
@@ -18,6 +25,6 @@ const ContentLayout: React.FC<Props> = ({ children, title }) => {
       </Styled.ContentLayoutWrap>
     </Styled.ContentLayout>
   );
-}
+};
 
 export default ContentLayout;

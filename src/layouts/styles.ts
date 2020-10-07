@@ -2,6 +2,12 @@ import styled from 'styled-components';
 import mediaQueries from 'src/app/theme/mediaQueries';
 import muiTheme from 'src/app/theme/muiTheme';
 
+const alignment = {
+  top: 'flex-start',
+  center: 'center',
+  bottom: 'flex-end',
+};
+
 const GeneralLayout = styled.div`
   position: relative;
   width: 100vw;
@@ -9,15 +15,27 @@ const GeneralLayout = styled.div`
   overflow: hidden;
 `;
 
-const ContentLayout = styled.div`
+interface ContentLayoutProps {
+  align: 'top' | 'bottom' | 'center';
+  fullwidth: boolean;
+}
+
+const ContentLayout = styled.div<ContentLayoutProps>`
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: ${props => alignment[props.align]};
   height: 100%;
   margin: 0 auto;
+  padding: ${muiTheme.spacing(1)};
 
-  ${mediaQueries.md(`
-    max-width: ${muiTheme.spacing(21)};
+  ${props =>
+    mediaQueries.md(`
+    max-width: ${props.fullwidth ? '75vw' : muiTheme.spacing(21)};
+    padding: ${muiTheme.spacing(1)} 0;
+  `)}
+
+  ${mediaQueries.xl(`
+    padding: ${muiTheme.spacing(2)} 0;
   `)}
 `;
 

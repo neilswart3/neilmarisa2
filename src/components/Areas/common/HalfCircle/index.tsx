@@ -41,6 +41,7 @@ class HalfCircle extends React.Component<Props, State> {
       <Styled.HalfCircleWrap pos={pos}>
         <Styled.HalfCircle
           onClick={() => this.handleClick(path)}
+          tabIndex={-1}
           pos={pos}
           variant='contained'
           color={color}

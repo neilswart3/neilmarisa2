@@ -23,8 +23,13 @@ const RsvpAttending: React.FC<Props> = ({ value, handleChange, error }) => {
         name='attend'
         value={value}
         onChange={handleChange}>
-        <FormControlLabel value='no' control={<Radio />} label='No' />
-        <FormControlLabel value='yes' control={<Radio />} label='Yes' />
+        <FormControlLabel key='no' value='no' control={<Radio />} label='No' />
+        <FormControlLabel
+          key='yes'
+          value='yes'
+          control={<Radio />}
+          label='Yes'
+        />
       </RadioGroup>
       {error !== '' && <FormHelperText>{error}</FormHelperText>}
     </Styled.FormControl>

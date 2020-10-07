@@ -6,7 +6,7 @@ interface Props {
 }
 
 const Red: React.FC<Props> = ({ pos }) => {
-  return <HalfCircle color='primary' text='RSVP' pos={pos} path='/rsvp' />;
+  return <HalfCircle color='secondary' text='RSVP' pos={pos} path='/rsvp' />;
 };
 
 export default Red;
