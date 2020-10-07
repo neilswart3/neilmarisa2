@@ -3,10 +3,10 @@ import GeneralLayout from 'src/layouts/GeneralLayout';
 import OurStory from 'src/components/OurStory';
 import { LinkRsvp, LinkLanding } from 'src/components/Areas';
 
-const VenuePage = () => {
+const AboutPage = () => {
   return (
     <GeneralLayout
-      overlay='secondary'
+      overlay='primary'
       areaBottomRight={<LinkLanding pos='bottomRight' />}
       areaTopLeft={<LinkRsvp pos='topLeft' />}>
       <OurStory />
@@ -14,4 +14,4 @@ const VenuePage = () => {
   );
 };
 
-export default VenuePage;
+export default AboutPage;

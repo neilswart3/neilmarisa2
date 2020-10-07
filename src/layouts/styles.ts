@@ -26,12 +26,11 @@ const ContentLayout = styled.div<ContentLayoutProps>`
   align-items: ${props => alignment[props.align]};
   height: 100%;
   margin: 0 auto;
-  padding: ${muiTheme.spacing(1)};
+  padding: ${muiTheme.spacing(1)} 0;
 
   ${props =>
     mediaQueries.md(`
-    max-width: ${props.fullwidth ? '75vw' : muiTheme.spacing(21)};
-    padding: ${muiTheme.spacing(1)} 0;
+    max-width: ${props.fullwidth ? '90vw' : muiTheme.spacing(21)};
   `)}
 
   ${mediaQueries.xl(`
@@ -41,9 +40,8 @@ const ContentLayout = styled.div<ContentLayoutProps>`
 
 const ContentLayoutWrap = styled.div`
   width: 100%;
-  max-width: 90vw;
 
-  ${mediaQueries.md(`
+  ${mediaQueries.lg(`
     max-width: 75vw;
   `)}
 `;

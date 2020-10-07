@@ -1,5 +1,6 @@
 import React from 'react';
 import Background from 'src/components/common/Background';
+import Plane from 'src/components/Plane';
 import Styled from './styles';
 
 interface Props {
@@ -15,6 +16,8 @@ const GeneralLayout: React.FC<Props> = props => {
   return (
     <Styled.GeneralLayout>
       <Background overlay={overlay} url='paris-min.jpg' />
+      <Plane pos='top' />
+      <Plane pos='bottom' />
       <Styled.ContentWrap>
         <Styled.TopLeftWrap>{areaTopLeft}</Styled.TopLeftWrap>
         <Styled.Content>{children}</Styled.Content>

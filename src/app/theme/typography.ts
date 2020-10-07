@@ -4,7 +4,7 @@ import muiTheme from './muiTheme';
 import fonts from './fonts';
 
 const { spacing } = muiTheme;
-const { lg, xl } = breakpoints.values;
+const { md, lg, xl } = breakpoints.values;
 
 const typography = {
   fontFamily: 'Avenir LT Std Book, sans-serif',
@@ -46,6 +46,12 @@ const typography = {
     [media(xl)]: {
       fontSize: spacing(2.5),
       lineHeight: spacing(2.5),
+    },
+  },
+  body1: {
+    fontSize: spacing(0.55),
+    [media(md)]: {
+      fontSize: spacing(0.65),
     },
   },
 };
