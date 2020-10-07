@@ -23,7 +23,8 @@ const RsvpRelationship: React.FC<Props> = ({ handleChange, value, error }) => {
       <Styled.Select
         labelId='relationship-label'
         id='relationship'
-        defaultValue={value}
+        name='relation'
+        value={value}
         onChange={handleChange}>
         {Object.entries(relationshipOptions).map(([key, value]) => (
           <Styled.MenuItem key={key} value={value}>
