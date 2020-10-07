@@ -12,6 +12,6 @@ const LandingPage: React.FC = () => {
       <Landing />
     </GeneralLayout>
   );
-}
+};
 
 export default LandingPage;
