@@ -18,7 +18,7 @@ const StorySection: React.FC<Props> = ({ item }) => {
     <Styled.StorySection>
       <Styled.StoryImage>
         {item.images.map(({ src, name }) => (
-          <Styled.ImageWrap>
+          <Styled.ImageWrap key={name}>
             <Image src={src} alt={name} />
           </Styled.ImageWrap>
         ))}

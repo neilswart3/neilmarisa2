@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import mediaQueries from 'src/app/theme/mediaQueries';
 import muiTheme from 'src/app/theme/muiTheme';
+import colors from 'src/app/theme/colors';
 
 const alignment = {
   top: 'flex-start',
@@ -27,6 +28,7 @@ const ContentLayout = styled.div<ContentLayoutProps>`
   height: 100%;
   margin: 0 auto;
   padding: ${muiTheme.spacing(1)} 0;
+  max-width: 90vw;
 
   ${props =>
     mediaQueries.md(`
@@ -62,6 +64,10 @@ const TopLeftWrap = styled.div`
 
 const BottomRightWrap = styled.div`
   position: relative;
+
+  /* button {
+    background-color: ${colors.secondary} !important;
+  } */
 `;
 
 const Content = styled.div`

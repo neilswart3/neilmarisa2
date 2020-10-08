@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Typography } from '@material-ui/core';
 import Image from 'src/components/common/Image';
 import Styled from './styles';
+import LinkOurStory from '../Areas/LinkOurStory';
 
 const Landing: React.FC = () => {
   return (
@@ -11,18 +12,14 @@ const Landing: React.FC = () => {
         <Typography variant='h1' color='primary'>
           Neil &amp; Marisa
         </Typography>
-        <Typography variant='subtitle1' color='primary'>
+        <Typography
+          variant='subtitle1'
+          color='primary'
+          style={{ fontWeight: 'bold' }}>
           Friday 27 Nov 2020
         </Typography>
+        <LinkOurStory />
         <Image src='neilmarisa.png' alt='Neil and Marisa' />
-        <Link href='/our-story'>
-          <Typography
-            variant='subtitle1'
-            color='secondary'
-            style={{ fontWeight: 'bold' }}>
-            Our Story
-          </Typography>
-        </Link>
       </Styled.HeaderWrap>
     </Styled.Landing>
   );
