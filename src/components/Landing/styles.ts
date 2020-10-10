@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import mediaQueries from 'src/app/theme/mediaQueries';
-import muiTheme from 'src/app/theme/muiTheme';
 
 const Landing = styled.div`
   display: flex;

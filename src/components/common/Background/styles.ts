@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { rgba } from 'polished';
 import colors from 'src/app/theme/colors';
+import mediaQueries from 'src/app/theme/mediaQueries';
 
 interface BackgroundProps {
   imgUrl: string;
@@ -9,15 +10,20 @@ interface BackgroundProps {
 const Background = styled.div<BackgroundProps>`
   position: absolute;
   left: 0;
-  top: 0;
-  height: 110%;
-  width: 110%;
+  top: -75px;
+  height: 120%;
+  width: 120%;
   background: url(${props => props.imgUrl}) no-repeat center/cover;
-  background-position: 50% 50%;
   background-color: rgba(255, 255, 255, 0.5);
   background-blend-mode: multiply;
-  opacity: 0.7;
+  opacity: 0.65;
   z-index: -1;
+
+  ${mediaQueries.md(`
+    top: 0;
+    height: 100%;
+    width: 100%;
+  `)}
 `;
 
 interface OverlayProps {
