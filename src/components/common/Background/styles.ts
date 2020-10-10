@@ -13,6 +13,7 @@ const Background = styled.div<BackgroundProps>`
   height: 110%;
   width: 110%;
   background: url(${props => props.imgUrl}) no-repeat center/cover;
+  background-position: 50% 50%;
   background-color: rgba(255, 255, 255, 0.5);
   background-blend-mode: multiply;
   opacity: 0.7;

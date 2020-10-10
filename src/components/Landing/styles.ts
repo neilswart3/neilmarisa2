@@ -15,11 +15,6 @@ const HeaderWrap = styled.div`
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding-bottom: ${muiTheme.spacing(2.5)};
-
-  ${mediaQueries.md(`
-    padding: 0;
-  `)};
 
   img {
     max-width: 80%;
