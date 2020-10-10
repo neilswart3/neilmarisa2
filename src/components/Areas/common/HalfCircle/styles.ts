@@ -56,21 +56,14 @@ const HalfCircleWrap = styled(motion.div)<HalfCirclePropsWrap>`
 
 interface HalfCircleProps {
   pos: 'topLeft' | 'bottomRight';
-  // bgColor: string;
-  // animate: string;
 }
 
 const HalfCircle = styled(MuiButton)<HalfCircleProps>`
   position: absolute;
   align-items: ${props => labelAlign[props.pos]};
-  /* left: 50%; */
-  /* ${props => `${absolutePos.sm[props.pos]}: 0;`} */
   height: 100%;
   width: 100%;
   border-radius: 50%;
-  /* transform: translateX(-50%); */
-  /* background-color: ${props => props.bgColor};
-  animation: ${props => props.animate} 2s ease; */
 
   ${mediaQueries.lg(`
     align-items: center;
