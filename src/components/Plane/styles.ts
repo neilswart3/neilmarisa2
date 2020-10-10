@@ -44,9 +44,9 @@ const PlaneContainerWrap = styled.div<PlaneProps>`
   `)}
 `;
 
-interface PlaneContainerProps {
+type PlaneContainerProps = PlaneProps & {
   color?: 'primary' | 'secondary';
-}
+};
 
 const PlaneContainer = styled.div<PlaneContainerProps>`
   position: relative;
