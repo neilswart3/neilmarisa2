@@ -54,31 +54,43 @@ const ContentWrap = styled.div`
   grid-template: 7.5% 85% 7.5% / 1fr;
   height: 100%; */
 
-  /* ${mediaQueries.lg(`
+  ${mediaQueries.lg(`
+    display: grid;
     grid-template: 1fr / 5% 90% 5%;
-  `)}; */
+    height: 100%;
+  `)}
 `;
 
-const TopLeftWrap = styled.div`
+const Wraps = styled.div`
   position: fixed;
+  height: 7.5vh;
+  width: 100%;
+
+  ${mediaQueries.lg(`
+    position: relative;
+    height: 100%;
+  `)}
+`;
+
+const TopLeftWrap = styled(Wraps)`
   top: 0;
   left: 0;
-  height: 7.5vh;
-  width: 100%;
 `;
 
-const BottomRightWrap = styled.div`
-  position: fixed;
+const BottomRightWrap = styled(Wraps)`
   bottom: 0;
   right: 0;
-  height: 7.5vh;
-  width: 100%;
 `;
 
 const Content = styled.div`
   height: 85vh;
   margin: 7.5vh 0;
   animation: fadeIn 2s ease-in-out;
+
+  ${mediaQueries.lg(`
+    height: initial;
+    margin: 0;
+  `)}
 `;
 
 const Styled = {
