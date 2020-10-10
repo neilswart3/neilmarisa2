@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter } from 'next/router';
-import Styled from './styles';
+import { Typography } from '@material-ui/core';
 
 interface Props {
   router: any;
@@ -15,13 +15,13 @@ const LinkOurStory: React.FC<Props> = props => {
   };
 
   return (
-    <Styled.LinkOurStory
+    <Typography
       component='a'
       variant='subtitle1'
       color='secondary'
       onClick={handleClick}>
       Our Story
-    </Styled.LinkOurStory>
+    </Typography>
   );
 };
 
