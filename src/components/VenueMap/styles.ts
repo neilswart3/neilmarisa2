@@ -1,11 +1,16 @@
 import styled from 'styled-components';
+import mediaQueries from 'src/app/theme/mediaQueries';
 import colors from 'src/app/theme/colors';
 import muiTheme from 'src/app/theme/muiTheme';
 
 const Map = styled.div`
-  height: 300px;
+  height: 200px;
   width: 100%;
   margin: ${muiTheme.spacing(1)} 0;
+
+  ${mediaQueries.md(`
+    height: 300px;
+  `)};
 `;
 
 const Marker = styled.span`
