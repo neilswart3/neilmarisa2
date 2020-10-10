@@ -15,7 +15,7 @@ class MyApp extends App<Props> {
     const { Component, pageProps } = this.props;
 
     return (
-      <StylesProvider injectFirst>
+      <StylesProvider>
         <ThemeProvider theme={theme}>
           <CssBaseline />
           <Component {...pageProps} />
