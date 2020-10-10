@@ -3,12 +3,13 @@ import Styled from './styles';
 
 interface PlaneProps {
   pos: 'top' | 'bottom';
+  color: 'primary' | 'secondary';
 }
 
-const Plane: React.FC<PlaneProps> = ({ pos }) => {
+const Plane: React.FC<PlaneProps> = ({ pos, color }) => {
   return (
     <Styled.PlaneContainerWrap pos={pos}>
-      <Styled.PlaneContainer pos={pos}>
+      <Styled.PlaneContainer pos={pos} color={color}>
         <Styled.PlaneContainerInner>
           <Styled.PlaneIcon1 />
           <Styled.PlaneIcon2 />

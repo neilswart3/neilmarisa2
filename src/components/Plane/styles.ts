@@ -44,13 +44,17 @@ const PlaneContainerWrap = styled.div<PlaneProps>`
   `)}
 `;
 
-const PlaneContainer = styled.div<PlaneProps>`
+interface PlaneContainerProps {
+  color?: 'primary' | 'secondary';
+}
+
+const PlaneContainer = styled.div<PlaneContainerProps>`
   position: relative;
   border-radius: 50%;
   height: 100%;
   width: 100%;
   border: 3px dashed;
-  color: ${props => color[props.pos]};
+  color: ${props => colors[props.color]};
   animation: rotate infinite 850s reverse linear;
 `;
 

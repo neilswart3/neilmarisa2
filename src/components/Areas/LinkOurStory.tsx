@@ -19,7 +19,8 @@ const LinkOurStory: React.FC<Props> = props => {
       component='a'
       variant='subtitle1'
       color='secondary'
-      onClick={handleClick}>
+      onClick={handleClick}
+      style={{ cursor: 'pointer', fontWeight: 'bold' }}>
       Our Story
     </Typography>
   );

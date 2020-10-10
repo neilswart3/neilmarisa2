@@ -49,28 +49,35 @@ const ContentLayoutWrap = styled.div`
 `;
 
 const ContentWrap = styled.div`
-  display: grid;
+  position: relative;
+  /* display: grid;
   grid-template: 7.5% 85% 7.5% / 1fr;
-  height: 100%;
+  height: 100%; */
 
-  ${mediaQueries.lg(`
+  /* ${mediaQueries.lg(`
     grid-template: 1fr / 5% 90% 5%;
-  `)};
+  `)}; */
 `;
 
 const TopLeftWrap = styled.div`
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 7.5vh;
+  width: 100%;
 `;
 
 const BottomRightWrap = styled.div`
-  position: relative;
-
-  /* button {
-    background-color: ${colors.secondary} !important;
-  } */
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  height: 7.5vh;
+  width: 100%;
 `;
 
 const Content = styled.div`
+  height: 85vh;
+  margin: 7.5vh 0;
   animation: fadeIn 2s ease-in-out;
 `;
 
