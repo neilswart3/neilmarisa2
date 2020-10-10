@@ -29,11 +29,11 @@ const Button = styled(MuiButton)`
   height: 100%;
 `;
 
-interface HalfCircleProps {
+interface HalfCirclePropsWrap {
   pos: 'topLeft' | 'bottomRight';
 }
 
-const HalfCircleWrap = styled(motion.div)<HalfCircleProps>`
+const HalfCircleWrap = styled(motion.div)<HalfCirclePropsWrap>`
   position: absolute;
   left: 50%;
   ${props => `${absolutePos.sm[props.pos]}: 0;`}
@@ -54,6 +54,12 @@ const HalfCircleWrap = styled(motion.div)<HalfCircleProps>`
   `)}
 `;
 
+interface HalfCircleProps {
+  pos: 'topLeft' | 'bottomRight';
+  // bgColor: string;
+  // animate: string;
+}
+
 const HalfCircle = styled(MuiButton)<HalfCircleProps>`
   position: absolute;
   align-items: ${props => labelAlign[props.pos]};
@@ -63,6 +69,8 @@ const HalfCircle = styled(MuiButton)<HalfCircleProps>`
   width: 100%;
   border-radius: 50%;
   /* transform: translateX(-50%); */
+  /* background-color: ${props => props.bgColor};
+  animation: ${props => props.animate} 2s ease; */
 
   ${mediaQueries.lg(`
     align-items: center;

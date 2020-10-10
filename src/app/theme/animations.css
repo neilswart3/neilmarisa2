@@ -52,12 +52,30 @@
   }
 }
 
+@keyframes fadeGreenToWhite {
+  from {
+    background-color: #34756f;
+  }
+  to {
+    background-color: #fff;
+  }
+}
+
 @keyframes fadeRedToTransparent {
   from {
     background-color: #a15d5f;
   }
   to {
     background-color: rgba(0, 0, 0, 0);
+  }
+}
+
+@keyframes fadeRedToWhite {
+  from {
+    background-color: #a15d5f;
+  }
+  to {
+    background-color: #fff;
   }
 }
 

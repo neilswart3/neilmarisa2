@@ -20,10 +20,12 @@ const PScrollbar = styled(PerfectScrollbar)`
 const OurStory = styled.div``;
 
 const StorySection = styled.div`
+  display: flex;
+  flex-direction: column-reverse;
   text-align: center;
 
   ${mediaQueries.md(`
-    display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: space-between;
     text-align: left;
@@ -52,7 +54,7 @@ const StorySection = styled.div`
 const StoryImage = styled.div`
   width: 30%;
   min-width: 250px;
-  margin: 0 auto ${muiTheme.spacing(0.5)};
+  margin: ${muiTheme.spacing(0.5)} auto;
 `;
 
 const ImageWrap = styled.span`

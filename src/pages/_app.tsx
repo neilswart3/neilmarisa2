@@ -6,7 +6,11 @@ import 'src/app/theme/font.css';
 import 'src/app/theme/animations.css';
 import 'react-perfect-scrollbar/dist/css/styles.css';
 
-class MyApp extends App<AppProps> {
+type Props = AppProps & {
+  router: any;
+};
+
+class MyApp extends App<Props> {
   render() {
     const { Component, pageProps } = this.props;
 
