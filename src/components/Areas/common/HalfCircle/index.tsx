@@ -11,8 +11,6 @@ interface OwnProps {
 
 type Props = OwnProps & {
   router: any;
-  prevRoute: string;
-  setPrevRoute: (route: string) => void;
 };
 
 const HalfCircle: React.FC<Props> = props => {
