@@ -9,7 +9,11 @@ const Landing: React.FC = () => {
   return (
     <Styled.Landing>
       <Styled.HeaderWrap>
-        <Typography gutterBottom variant='h1' color='primary'>
+        <Typography
+          gutterBottom
+          variant='h1'
+          color='primary'
+          style={{ fontWeight: 'bold' }}>
           Neil &amp; Marisa
         </Typography>
         <Typography
