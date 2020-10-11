@@ -19,8 +19,8 @@ const Landing: React.FC = () => {
           style={{ fontWeight: 'bold' }}>
           Friday 27 Nov 2020
         </Typography>
-        <LinkOurStory />
         <Image src='neilmarisa.png' alt='Neil and Marisa' />
+        <LinkOurStory />
       </Styled.HeaderWrap>
     </Styled.Landing>
   );

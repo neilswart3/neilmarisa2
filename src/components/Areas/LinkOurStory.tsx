@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter } from 'next/router';
-import { Typography } from '@material-ui/core';
+import Styled from './styles';
 
 interface Props {
   router: any;
@@ -15,14 +15,13 @@ const LinkOurStory: React.FC<Props> = props => {
   };
 
   return (
-    <Typography
-      component='a'
-      variant='subtitle1'
-      color='secondary'
+    <Styled.Button
+      variant='contained'
+      color='primary'
       onClick={handleClick}
-      style={{ cursor: 'pointer', fontWeight: 'bold' }}>
+      style={{ cursor: 'pointer' }}>
       Our Story
-    </Typography>
+    </Styled.Button>
   );
 };
 
