@@ -1,4 +1,5 @@
 import App, { AppProps } from 'next/app';
+import Head from 'next/head';
 import { CssBaseline } from '@material-ui/core';
 import { StylesProvider, ThemeProvider } from '@material-ui/core/styles';
 import theme from 'src/app/theme';
@@ -15,12 +16,17 @@ class MyApp extends App<Props> {
     const { Component, pageProps } = this.props;
 
     return (
-      <StylesProvider injectFirst>
-        <ThemeProvider theme={theme}>
-          <CssBaseline />
-          <Component {...pageProps} />
-        </ThemeProvider>
-      </StylesProvider>
+      <>
+        <Head>
+          <title>Neil and Marisa wedding</title>
+        </Head>
+        <StylesProvider injectFirst>
+          <ThemeProvider theme={theme}>
+            <CssBaseline />
+            <Component {...pageProps} />
+          </ThemeProvider>
+        </StylesProvider>
+      </>
     );
   }
 }

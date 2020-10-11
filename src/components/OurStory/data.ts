@@ -1,6 +1,6 @@
 export default [
   {
-    images: [{ src: 'in-love.jpg', name: 'photoshoot standing' }],
+    images: [{ src: 'inlove.jpg', name: 'photoshoot standing' }],
     text: '',
   },
   {
@@ -11,7 +11,7 @@ export default [
   {
     images: [
       {
-        src: 'arc-de-triomph.jpg',
+        src: 'arcdetriomph.jpg',
         name: 'Our adventure in Paris at Arc de Triomph',
       },
     ],
