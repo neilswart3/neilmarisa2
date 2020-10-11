@@ -22,6 +22,7 @@ class MyDocument extends Document {
             content='Neil Swart, Marisa Janeke, Swart Wedding, Wedding website, Rsvp website, our story website'
           />
           <meta name='author' content='Neil Swart' />
+          <link rel='shortcut icon' href='/favicon.png' type='image/x-icon' />
         </Head>
         <body>
           <Main />

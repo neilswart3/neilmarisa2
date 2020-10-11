@@ -1,7 +1,7 @@
 import App, { AppProps } from 'next/app';
-import Head from 'next/head';
 import { CssBaseline } from '@material-ui/core';
 import { StylesProvider, ThemeProvider } from '@material-ui/core/styles';
+import HeadLoader from 'src/components/HeadLoader';
 import theme from 'src/app/theme';
 import 'src/app/theme/font.css';
 import 'src/app/theme/animations.css';
@@ -17,9 +17,7 @@ class MyApp extends App<Props> {
 
     return (
       <>
-        <Head>
-          <title>Neil and Marisa wedding</title>
-        </Head>
+        <HeadLoader />
         <StylesProvider injectFirst>
           <ThemeProvider theme={theme}>
             <CssBaseline />
