@@ -1,4 +1,4 @@
-import nodemailer from 'nodemailer';
+import nodemailer, { TransportOptions } from 'nodemailer';
 import { regex } from 'src/components/Rsvp/errors';
 
 const transporter = nodemailer.createTransport({
@@ -8,7 +8,7 @@ const transporter = nodemailer.createTransport({
     user: 'disabled',
     pass: 'disabled',
   },
-});
+} as TransportOptions);
 
 const validate = (name: string, value: string): boolean => {
   if (value === '') {
