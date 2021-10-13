@@ -3,7 +3,7 @@ import GeneralLayout from 'src/layouts/GeneralLayout';
 import OurStory from 'src/components/OurStory';
 import { LinkRsvp, LinkLanding } from 'src/components/Areas';
 
-const AboutPage = () => {
+const AboutPage: React.FC = () => {
   return (
     <GeneralLayout
       overlay='primary'

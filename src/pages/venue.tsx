@@ -3,7 +3,7 @@ import GeneralLayout from 'src/layouts/GeneralLayout';
 import Venue from 'src/components/Venue';
 import { LinkRsvp, LinkLanding } from 'src/components/Areas';
 
-const VenuePage = () => {
+const VenuePage: React.FC = () => {
   return (
     <GeneralLayout
       overlay='primary'

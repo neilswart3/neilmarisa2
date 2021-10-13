@@ -2,7 +2,6 @@ import React from 'react';
 import Link from 'next/link';
 import GoogleMapReact from 'google-map-react';
 import { Button } from '@material-ui/core';
-import publicSettings from 'src/app/publicSettings';
 import Marker from './Marker';
 import Styled from './styles';
 
@@ -12,7 +11,7 @@ const VenueMap: React.FC = () => {
       <Styled.Map>
         <GoogleMapReact
           yesIWantToUseGoogleMapApiInternals
-          bootstrapURLKeys={{ key: publicSettings.google.apiKey }}
+          bootstrapURLKeys={{ key: 'disabled' }}
           defaultCenter={{
             lat: -25.767738,
             lng: 28.48434199999997,

@@ -1,6 +1,5 @@
 import React from 'react';
 import { Typography } from '@material-ui/core';
-import publicSettings from 'src/app/publicSettings';
 import { sendContactMail } from 'src/networking/sendContactMail';
 import ContentLayout from 'src/layouts/ContentLayout';
 import { RsvpTextField, RsvpAttending, RsvpRelationship } from './common';
@@ -84,7 +83,11 @@ class Rsvp extends React.Component<{}, State> {
       relation,
     } = this.state;
     const hasErrors = Object.values(errors).filter(val => val !== '');
-    const recipientMail = publicSettings.mail.resMail;
+
+    /**
+     * Disabled contact form
+     */
+    const recipientMail = 'example@mail.com';
 
     if (hasErrors.length === 0) {
       try {
